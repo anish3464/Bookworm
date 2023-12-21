@@ -1,0 +1,14 @@
+{% include 'menu.html'%}
+{% load static %}
+<h1>List of books</h1>
+{% for obj in books %}
+<h1>Title : {{obj.title | upper}}</h1>
+<img src="{%static 'images/' %}{{obj.img}}">
+<p>Author: {{obj.author}}</p>
+<h4>Rating: {{obj.rating | default:'no rating yet'}}</h4>
+{% if obj.success %}
+<p>The book was very popular</p>
+{% else %}
+<p>The book was not very popular</p>
+{% endif %}
+{% endfor %}

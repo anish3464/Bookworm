@@ -1,0 +1,12 @@
+{% extends 'blank.html' %}
+
+{% block za_world %}
+<h1>Create</h1>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    Title: <input type="text" name="title"/>
+    Author: <input type="text" name="author"/>
+    Rating: <input type="text" name="rating"/>
+<button type="submit">create</button>
+</form>
+{% endblock za_world %}
